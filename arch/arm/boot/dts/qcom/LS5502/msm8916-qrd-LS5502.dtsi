@@ -184,7 +184,7 @@
 		bosch,place = <3>;
 		bosch,gpio-int1 = <&msm_gpio 112 0x2002>;
 		bosch,gpio-int2 = <&msm_gpio 114 0x2002>;
-		status = "disabled";
+		status = "ok";
 	};
 
 	memsic@30 { /* Magnetic field sensor */
