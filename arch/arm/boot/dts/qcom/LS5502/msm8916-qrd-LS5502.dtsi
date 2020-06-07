@@ -168,7 +168,7 @@
 		avago,als-D = <129>;
 		avago,ga-value = <768>;
 		avago,default-cal;
-		status = "disabled";
+		status = "ok";
 	};
 
 	bosch@18 { /* Accelerometer sensor */
