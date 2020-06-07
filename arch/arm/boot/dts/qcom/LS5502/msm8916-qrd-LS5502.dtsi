@@ -195,7 +195,7 @@
 		memsic,dir = "obverse-x-axis-forward";
 		memsic,use-hrtimer = <0x1>;
 		memsic,auto-report;
-		status = "disabled";
+		status = "ok";
 	};
 
 	mpu6050@68 {
