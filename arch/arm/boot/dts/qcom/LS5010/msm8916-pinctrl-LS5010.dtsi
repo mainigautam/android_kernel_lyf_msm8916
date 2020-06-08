@@ -1,0 +1,47 @@
+/* Copyright (c) 2020, The Linux Foundation. All rights reserved.
+*  Copyright (c) 2020, the_shahnawaz_sheikh (sheikhshahnawaz41299).
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License version 2 and
+* only version 2 as published by the Free Software Foundation.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*/
+ 
+&tlmm_pinmux {
+	
+	
+	pmx_mdss {
+				active {
+					output-high;
+				};
+
+				suspend {
+					bias-pull-down;
+					output-low;
+				};
+			};
+			
+	ltr559_int_pin {
+				qcom,pins = <&gp 113>;
+				qcom,pin-func = <0>;
+				qcom,num-grp-pins = <1>;
+				label = "ltr559-irq";
+
+				ltr559_default: ltr559_default {
+					drive-strength = <6>;
+					bias-pull-up;
+				};
+
+				ltr559_sleep: ltr559_sleep {
+					drive-strength = <2>;
+					bias-pull-down;
+				};
+			};
+
+	
+         
+};
