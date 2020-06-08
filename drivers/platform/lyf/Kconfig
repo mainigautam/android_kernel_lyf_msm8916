@@ -21,4 +21,11 @@ config MACH_LS5502
 	help
 	  Support for Lyf wind 3 variant
 
+config MACH_LS5010
+	bool "LS5010 board"
+	select MACH_LYF_MSM8916
+	help
+	  Support for Lyf wind 1 variant
+
+
 endmenu
