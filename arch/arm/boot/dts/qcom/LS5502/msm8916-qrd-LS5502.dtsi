@@ -122,6 +122,54 @@
 		qcom,key-codes = <158 102 139>;
 		qcom,y-offset = <0>;
 	};
+
+    sound {
+			compatible = "qcom,msm8x16-audio-codec";
+			qcom,model = "msm8x16-skui-snd-card";
+			qcom,msm-snd-card-id = <0x0>;
+			qcom,msm-ext-pa = "primary";
+			qcom,msm-codec-type = "internal";
+			qcom,msm-mbhc-hphl-swh = <0x1>;
+			qcom,msm-mbhc-gnd-swh = <0x0>;
+			qcom,msm-hs-micbias-type = "internal";
+			qcom,msm-mclk-freq = <9600000>;
+			qcom,audio-routing = "RX_BIAS", "MCLK",
+                                 "SPK_RX_BIAS", "MCLK", 
+                                 "INT_LDO_H", "MCLK", 
+                                 "MIC BIAS Internal1", "Handset Mic", 
+                                 "MIC BIAS Internal2", "Headset Mic", 
+                                 "MIC BIAS Internal1", "Secondary Mic", 
+                                 "AMIC1", "MIC BIAS Internal1", 
+                                 "AMIC2", "MIC BIAS Internal2", 
+                                 "AMIC3", "MIC BIAS Internal1";
+			pinctrl-names = "cdc_lines_act",
+                            "cdc_lines_sus";
+			pinctrl-0 = <0x115>;
+			pinctrl-1 = <0x116>;
+			asoc-platform = <0x117 0x118 0x119 0x11a 0x11b 0x11c 0x11d 0x11e 0x11f 0x120 0x121>;
+			asoc-platform-names = "msm-pcm-dsp.0", "msm-pcm-dsp.1",
+                            "msm-voip-dsp", "msm-pcm-voice", 
+                            "msm-pcm-loopback", "msm-compress-dsp", 
+                            "msm-pcm-hostless", "msm-pcm-afe", 
+                            "msm-lsm-client", "msm-pcm-routing", 
+                            "msm-pcm-lpa";
+			asoc-cpu = <0x122 0x123 0x124 0x125 0x126 0x127 0x128 0x129 0x12a 0x12b 0x12c 0x12d 0x12e 0x12f 0x130 0x131 0x132 0x133 0x134 0x135 0x136 0x137 0x138 0x139 0x13a 0x13b>;
+			asoc-cpu-names = "msm-dai-q6-auxpcm.1", "msm-dai-q6-hdmi.8",
+                             "msm-dai-q6-mi2s.0", "msm-dai-q6-mi2s.1",
+                             "msm-dai-q6-mi2s.2", "msm-dai-q6-mi2s.3", 
+                             "msm-dai-q6-dev.16384", "msm-dai-q6-dev.16385", 
+                             "msm-dai-q6-dev.16386", "msm-dai-q6-dev.16387", 
+                             "msm-dai-q6-dev.16390", "msm-dai-q6-dev.16391", 
+                             "msm-dai-q6-dev.16392", "msm-dai-q6-dev.16393", 
+                             "msm-dai-q6-dev.12288", "msm-dai-q6-dev.12289",
+                             "msm-dai-q6-dev.12292", "msm-dai-q6-dev.12293", 
+                             "msm-dai-q6-dev.224", "msm-dai-q6-dev.225", 
+                             "msm-dai-q6-dev.241", "msm-dai-q6-dev.240",
+                             "msm-dai-q6-dev.32771", "msm-dai-q6-dev.32772", 
+                             "msm-dai-q6-dev.32773", "msm-dai-q6-dev.32770";
+			asoc-codec = <0x13c 0x13d>;
+			asoc-codec-names = "msm-stub-codec.1", "tombak_codec";
+	};
 	
 	gpio-leds {
 		compatible = "gpio-leds";
@@ -385,52 +433,3 @@
 						qcom,mode-ctrl = <0x60>;
 					};
 };
-
-	sound {
-			compatible = "qcom,msm8x16-audio-codec";
-			qcom,model = "msm8x16-skui-snd-card";
-			qcom,msm-snd-card-id = <0x0>;
-			qcom,msm-ext-pa = "primary";
-			qcom,msm-codec-type = "internal";
-			qcom,msm-mbhc-hphl-swh = <0x1>;
-			qcom,msm-mbhc-gnd-swh = <0x0>;
-			qcom,msm-hs-micbias-type = "internal";
-			qcom,msm-mclk-freq = <9600000>;
-			qcom,audio-routing = "RX_BIAS", "MCLK",
-                                 "SPK_RX_BIAS", "MCLK", 
-                                 "INT_LDO_H", "MCLK", 
-                                 "MIC BIAS Internal1", "Handset Mic", 
-                                 "MIC BIAS Internal2", "Headset Mic", 
-                                 "MIC BIAS Internal1", "Secondary Mic", 
-                                 "AMIC1", "MIC BIAS Internal1", 
-                                 "AMIC2", "MIC BIAS Internal2", 
-                                 "AMIC3", "MIC BIAS Internal1";
-			pinctrl-names = "cdc_lines_act", "cdc_lines_sus";
-			pinctrl-0 = <0x115>;
-			pinctrl-1 = <0x116>;
-			asoc-platform = <0x117 0x118 0x119 0x11a 0x11b 0x11c 0x11d 0x11e 0x11f 0x120 0x121>;
-			asoc-platform-names = "msm-pcm-dsp.0", "msm-pcm-dsp.1",
-                                  "msm-voip-dsp", "msm-pcm-voice", 
-                                  "msm-pcm-loopback", "msm-compress-dsp", 
-                                  "msm-pcm-hostless", "msm-pcm-afe", 
-                                  "msm-lsm-client", "msm-pcm-routing", 
-                                  "msm-pcm-lpa";
-			asoc-cpu = <0x122 0x123 0x124 0x125 0x126 0x127 0x128 0x129 0x12a 0x12b 0x12c 0x12d 0x12e 0x12f 0x130 0x131 0x132 0x133 0x134 0x135 0x136 0x137 0x138 0x139 0x13a 0x13b>;
-			asoc-cpu-names = "msm-dai-q6-auxpcm.1", "msm-dai-q6-hdmi.8",
-                             "msm-dai-q6-mi2s.0", "msm-dai-q6-mi2s.1",
-                             "msm-dai-q6-mi2s.2", "msm-dai-q6-mi2s.3", 
-                             "msm-dai-q6-dev.16384", "msm-dai-q6-dev.16385", 
-                             "msm-dai-q6-dev.16386", "msm-dai-q6-dev.16387", 
-                             "msm-dai-q6-dev.16390", "msm-dai-q6-dev.16391", 
-                             "msm-dai-q6-dev.16392", "msm-dai-q6-dev.16393", 
-                             "msm-dai-q6-dev.12288", "msm-dai-q6-dev.12289",
-                             "msm-dai-q6-dev.12292", "msm-dai-q6-dev.12293", 
-                             "msm-dai-q6-dev.224", "msm-dai-q6-dev.225", 
-                             "msm-dai-q6-dev.241", "msm-dai-q6-dev.240",
-                             "msm-dai-q6-dev.32771", "msm-dai-q6-dev.32772", 
-                             "msm-dai-q6-dev.32773", "msm-dai-q6-dev.32770";
-			asoc-codec = <0x13c 0x13d>;
-			asoc-codec-names = "msm-stub-codec.1", "tombak_codec";
-		};
-
-
