@@ -395,6 +395,7 @@
 			qcom,msm-mbhc-hphl-swh = <0x1>;
 			qcom,msm-mbhc-gnd-swh = <0x0>;
 			qcom,msm-hs-micbias-type = "internal";
+			qcom,msm-mclk-freq = <9600000>;
 			qcom,audio-routing = "RX_BIAS", "MCLK",
                                  "SPK_RX_BIAS", "MCLK", 
                                  "INT_LDO_H", "MCLK", 
